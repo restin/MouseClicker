@@ -23,9 +23,11 @@ namespace MouseClicker
         private System.Timers.Timer _delayTimer;
         private System.Timers.Timer _clickTimer;
 
-        private int _numberOfSeconds;
-        private int _clickSpeed;
-        private int _sumClicks;
+        private int _numberOfSeconds; //countdown timer
+        private int _clickSpeed; //speed (interval) of clicks
+        private int _timeSpentClicking; //how many seconds to click
+        private int _sumClicks; //to calculate number of clicks
+        private int _clickCount; //for testing
 
 
         delegate void SetTextCallback(string text);
@@ -38,7 +40,7 @@ namespace MouseClicker
         private void button1_Click(object sender, EventArgs e)
         {
             SetValues();
-
+            button1.Text = "5";
             //_delayTimer = new System.Timers.Timer();
             //_delayTimer.Interval = 1000;
             //_delayTimer.Elapsed += _delayTimer_Elapsed;
@@ -115,13 +117,17 @@ namespace MouseClicker
 
         private void button2_Click(object sender, EventArgs e)
         {
+            ++_clickCount;
+
             if (button2.BackColor == Color.Red)
             {
                 button2.BackColor = Color.Green;
+                button2.Text = _clickCount.ToString();
             }
             else
             {
                 button2.BackColor = Color.Red;
+                button2.Text = _clickCount.ToString();
             }
         }
 
@@ -135,35 +141,18 @@ namespace MouseClicker
         {
             _clickSpeed = (int)clickSpeed.Value;
             _numberOfSeconds = 5;
-            _sumClicks = (_numberOfSeconds * 1000) / _clickSpeed;
+            _sumClicks = ((int)durationOfClicks.Value * 1000) / _clickSpeed;
+            _timeSpentClicking = (int)durationOfClicks.Value;
 
             timerClickSpeed.Interval = _clickSpeed;
-            timerDuration.Interval = _numberOfSeconds;
-        }
 
-        private void timerDuration_Tick(object sender, EventArgs e)
-        {
-            if (_clickSpeed != 0)
-            {
-                timerClickSpeed.Start();
-                _clickSpeed = _clickSpeed - (int)clickSpeed.Value;
-            }
-            else
-            {
-                timerClickSpeed.Stop();
-                timerDuration.Stop();
-            }
+            _clickCount = 0;
 
-        }
-
-        private void timerClickSpeed_Tick(object sender, EventArgs e)
-        {
-            DoMouseClick();
         }
 
         private void timerCountDown_Tick(object sender, EventArgs e)
         {
-            button1.Text = _numberOfSeconds.ToString();
+            button1.Text = (_numberOfSeconds - 1).ToString();
             --_numberOfSeconds;
 
             if (_numberOfSeconds == 0)
@@ -171,7 +160,29 @@ namespace MouseClicker
                 timerCountDown.Stop();
                 button1.Text = "Start";
                 timerDuration.Start();
+                timerClickSpeed.Start();
             }
+        }
+
+        private void timerDuration_Tick(object sender, EventArgs e)
+        {
+            //DoMouseClick();
+
+
+            if (_timeSpentClicking != 0)
+            {
+                --_timeSpentClicking;
+            }
+            else
+            {
+                timerClickSpeed.Stop();
+                timerDuration.Stop();
+            }
+        }
+
+        private void timerClickSpeed_Tick(object sender, EventArgs e)
+        {
+            DoMouseClick();
         }
     }
 }

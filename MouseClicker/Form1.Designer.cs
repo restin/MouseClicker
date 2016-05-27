@@ -48,10 +48,9 @@ namespace MouseClicker
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(108, 201);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(81, 163);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(161, 84);
+            this.button1.Size = new System.Drawing.Size(121, 68);
             this.button1.TabIndex = 0;
             this.button1.Text = "Start";
             this.button1.UseVisualStyleBackColor = true;
@@ -60,18 +59,16 @@ namespace MouseClicker
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(67, 114);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(50, 93);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 17);
+            this.label1.Size = new System.Drawing.Size(61, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Duration (s)";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // durationOfClicks
             // 
-            this.durationOfClicks.Location = new System.Drawing.Point(157, 106);
-            this.durationOfClicks.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.durationOfClicks.Location = new System.Drawing.Point(118, 86);
             this.durationOfClicks.Maximum = new decimal(new int[] {
             999999,
             0,
@@ -83,7 +80,7 @@ namespace MouseClicker
             0,
             0});
             this.durationOfClicks.Name = "durationOfClicks";
-            this.durationOfClicks.Size = new System.Drawing.Size(160, 22);
+            this.durationOfClicks.Size = new System.Drawing.Size(120, 20);
             this.durationOfClicks.TabIndex = 3;
             this.durationOfClicks.Value = new decimal(new int[] {
             1,
@@ -94,10 +91,9 @@ namespace MouseClicker
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Green;
-            this.button2.Location = new System.Drawing.Point(377, 53);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Location = new System.Drawing.Point(283, 43);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(253, 231);
+            this.button2.Size = new System.Drawing.Size(190, 188);
             this.button2.TabIndex = 5;
             this.button2.Text = "Click Area";
             this.button2.UseVisualStyleBackColor = false;
@@ -106,10 +102,9 @@ namespace MouseClicker
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 158);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(21, 128);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 17);
+            this.label3.Size = new System.Drawing.Size(86, 13);
             this.label3.TabIndex = 6;
             this.label3.Text = "Click Speed (ms)";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -121,8 +116,7 @@ namespace MouseClicker
             0,
             0,
             0});
-            this.clickSpeed.Location = new System.Drawing.Point(157, 149);
-            this.clickSpeed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.clickSpeed.Location = new System.Drawing.Point(118, 121);
             this.clickSpeed.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -134,7 +128,7 @@ namespace MouseClicker
             0,
             0});
             this.clickSpeed.Name = "clickSpeed";
-            this.clickSpeed.Size = new System.Drawing.Size(160, 22);
+            this.clickSpeed.Size = new System.Drawing.Size(120, 20);
             this.clickSpeed.TabIndex = 7;
             this.clickSpeed.Value = new decimal(new int[] {
             1000,
@@ -144,10 +138,9 @@ namespace MouseClicker
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(32, 27);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Location = new System.Drawing.Point(24, 22);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(116, 48);
+            this.button3.Size = new System.Drawing.Size(87, 39);
             this.button3.TabIndex = 8;
             this.button3.Text = "Calculate Clicks";
             this.button3.UseVisualStyleBackColor = true;
@@ -156,10 +149,9 @@ namespace MouseClicker
             // lblTotalClicks
             // 
             this.lblTotalClicks.AutoSize = true;
-            this.lblTotalClicks.Location = new System.Drawing.Point(157, 27);
-            this.lblTotalClicks.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTotalClicks.Location = new System.Drawing.Point(118, 22);
             this.lblTotalClicks.Name = "lblTotalClicks";
-            this.lblTotalClicks.Size = new System.Drawing.Size(16, 17);
+            this.lblTotalClicks.Size = new System.Drawing.Size(13, 13);
             this.lblTotalClicks.TabIndex = 9;
             this.lblTotalClicks.Text = "1";
             // 
@@ -180,9 +172,9 @@ namespace MouseClicker
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(665, 322);
+            this.ClientSize = new System.Drawing.Size(496, 262);
             this.Controls.Add(this.lblTotalClicks);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.clickSpeed);
@@ -191,7 +183,6 @@ namespace MouseClicker
             this.Controls.Add(this.durationOfClicks);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Crazy Clicker";
             ((System.ComponentModel.ISupportInitialize)(this.durationOfClicks)).EndInit();
